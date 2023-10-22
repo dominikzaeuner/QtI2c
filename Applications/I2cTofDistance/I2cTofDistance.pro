@@ -17,3 +17,11 @@ FORMS += \
 
 HEADERS += \
     I2cTofDistanceWindow.h
+
+INCLUDEPATH += \
+    $$PWD/../../Libraries/QtI2c
+
+LIBS += -L$$OUT_PWD/../../Libraries/QtI2c -lqti2c
+
+DEPENDPATH += $$PWD/../../../Libraries/QtI2c
+PRE_TARGETDEPS += $$OUT_PWD/../../Libraries/QtI2c/libqti2c.so

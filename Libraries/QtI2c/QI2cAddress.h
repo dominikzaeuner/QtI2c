@@ -5,14 +5,19 @@ template<class T>
 class QI2cAddress
 {
 public:
-    QI2cAddress(const T &address) :
+    constexpr QI2cAddress(const T &address) :
         m_address(address)
     {
     }
 
-    const T &address() const
+    constexpr const T &address() const
     {
         return m_address;
+    }
+
+    constexpr bool operator <(QI2cAddress other) const
+    {
+        return m_address < other.m_address;
     }
 
 private:

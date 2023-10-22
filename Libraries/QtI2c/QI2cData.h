@@ -5,12 +5,22 @@ template<class T>
 class QI2cData
 {
 public:
-    QI2cData(const T &value) :
+    constexpr QI2cData() :
+        m_value(0)
+    {
+    }
+
+    constexpr QI2cData(const T &value) :
         m_value(value)
     {
     }
 
-    const T &value() const
+    constexpr const T &value() const
+    {
+        return m_value;
+    }
+
+    constexpr operator T() const
     {
         return m_value;
     }
